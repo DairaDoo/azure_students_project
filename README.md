@@ -44,6 +44,8 @@ Ejemplo:
 ### 1. Preparación Local
 Describe los pasos para instalar, correr y probar tu aplicación localmente.
 
+
+
 ### 2. Configuración en Azure
 - Pasos realizados en Azure Portal
 - Configuración del App Service
