@@ -31,9 +31,6 @@ Describe brevemente tu aplicación:
 --- 
 
 ## 🧱 Diagrama de Arquitectura
-Agrega aquí una imagen o captura del diagrama de la infraestructura (puedes usar draw.io, Lucidchart, PowerPoint, etc.)  
-Formato sugerido: PNG o JPG  
-Ejemplo:
 
 ![Diagrama](./imgs/diagrama_infraestructura_azure.png)
 
