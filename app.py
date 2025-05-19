@@ -1,37 +1,54 @@
-from flask import Flask, render_template, request, redirect
-import pyodbc
 import os
+import pyodbc
+from flask import Flask, render_template, request, redirect
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# Configuración de la base de datos desde variables de entorno
+
+# Database configuration from environment variables
 server = os.getenv("SQL_SERVER")
 database = os.getenv("SQL_DATABASE")
 username = os.getenv("SQL_USERNAME")
 password = os.getenv("SQL_PASSWORD")
 driver = "{ODBC Driver 18 for SQL Server}"
 
-connection_string = f"DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}"
-conn = pyodbc.connect(connection_string)
-cursor = conn.cursor()
+connection_string = (
+    f"DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}"
+)
 
+try:
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
 
-# Crear tabla si no existe (una sola vez)
-cursor.execute("""
-    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tasks' AND xtype='U')
-    CREATE TABLE tasks (
-        id INT PRIMARY KEY IDENTITY(1,1),
-        title NVARCHAR(100),
-        done BIT
+    # Create table if it doesn't exist (run once)
+    cursor.execute(
+        """
+        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tasks' AND xtype='U')
+        CREATE TABLE tasks (
+            id INT PRIMARY KEY IDENTITY(1,1),
+            title NVARCHAR(100),
+            done BIT
+        )
+        """
     )
-""")
-conn.commit()
+    conn.commit()
+
+except pyodbc.Error as ex:
+    sqlstate = ex.args[0]
+    print(f"Database connection error: {sqlstate}")
+    print("Check your database settings and ensure the ODBC driver is correctly installed.")
+    exit()  # Exit the application if the database connection fails
+
 
 @app.route("/")
 def index():
     cursor.execute("SELECT * FROM tasks")
     tasks = cursor.fetchall()
     return render_template("index.html", tasks=tasks)
+
 
 @app.route("/add", methods=["POST"])
 def add_task():
@@ -41,17 +58,20 @@ def add_task():
         conn.commit()
     return redirect("/")
 
+
 @app.route("/done/<int:task_id>")
 def mark_done(task_id):
     cursor.execute("UPDATE tasks SET done = 1 WHERE id = ?", (task_id,))
     conn.commit()
     return redirect("/")
 
+
 @app.route("/delete/<int:task_id>")
 def delete_task(task_id):
     cursor.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
     conn.commit()
     return redirect("/")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
