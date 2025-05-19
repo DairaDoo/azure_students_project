@@ -28,7 +28,7 @@ Describe brevemente tu aplicación:
 | Azure SQL Server      | Motor de base de datos para gestionar conexiones y seguridad              | ✅ Sí                           |
 
 
----
+--- 
 
 ## 🧱 Diagrama de Arquitectura
 
@@ -40,6 +40,8 @@ Describe brevemente tu aplicación:
 
 ### 1. Preparación Local
 Describe los pasos para instalar, correr y probar tu aplicación localmente.
+
+
 
 ### 2. Configuración en Azure
 - Pasos realizados en Azure Portal
