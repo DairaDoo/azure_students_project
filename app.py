@@ -39,7 +39,9 @@ try:
 except pyodbc.Error as ex:
     sqlstate = ex.args[0]
     print(f"Database connection error: {sqlstate}")
-    print("Check your database settings and ensure the ODBC driver is correctly installed.")
+    print(
+        "Check your database settings and ensure the ODBC driver is correctly installed."
+    )
     exit()  # Exit the application if the database connection fails
 
 
@@ -48,7 +50,6 @@ def index():
     cursor.execute("SELECT * FROM tasks")
     tasks = cursor.fetchall()
     return render_template("index.html", tasks=tasks)
-
 
 
 @app.route("/add", methods=["POST"])
@@ -60,7 +61,6 @@ def add_task():
     return redirect("/")
 
 
-
 @app.route("/done/<int:task_id>")
 def mark_done(task_id):
     cursor.execute("UPDATE tasks SET done = 1 WHERE id = ?", (task_id,))
@@ -68,13 +68,11 @@ def mark_done(task_id):
     return redirect("/")
 
 
-
 @app.route("/delete/<int:task_id>")
 def delete_task(task_id):
     cursor.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
     conn.commit()
     return redirect("/")
-
 
 
 if __name__ == "__main__":
