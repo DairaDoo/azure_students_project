@@ -44,6 +44,8 @@ Ejemplo:
 ### 1. Preparación Local
 Describe los pasos para instalar, correr y probar tu aplicación localmente.
 
+1. Clonar el repositorio de github: https://github.com/javierdastas/comp4260
+2. 
 
 
 ### 2. Configuración en Azure
