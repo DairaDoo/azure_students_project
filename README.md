@@ -28,7 +28,7 @@ Describe brevemente tu aplicación:
 | Azure SQL Server      | Motor de base de datos para gestionar conexiones y seguridad              | ✅ Sí                           |
 
 
----
+--- 
 
 ## 🧱 Diagrama de Arquitectura
 Agrega aquí una imagen o captura del diagrama de la infraestructura (puedes usar draw.io, Lucidchart, PowerPoint, etc.)  
