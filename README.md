@@ -35,7 +35,7 @@ Agrega aquí una imagen o captura del diagrama de la infraestructura (puedes usa
 Formato sugerido: PNG o JPG  
 Ejemplo:
 
-![Diagrama](./diagrama_arquitectura.png)
+![Diagrama](./imgs/diagrama_infraestructura_azure.png)
 
 ---
 
