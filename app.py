@@ -50,6 +50,7 @@ def index():
     return render_template("index.html", tasks=tasks)
 
 
+
 @app.route("/add", methods=["POST"])
 def add_task():
     title = request.form.get("title")
@@ -59,6 +60,7 @@ def add_task():
     return redirect("/")
 
 
+
 @app.route("/done/<int:task_id>")
 def mark_done(task_id):
     cursor.execute("UPDATE tasks SET done = 1 WHERE id = ?", (task_id,))
@@ -66,11 +68,13 @@ def mark_done(task_id):
     return redirect("/")
 
 
+
 @app.route("/delete/<int:task_id>")
 def delete_task(task_id):
     cursor.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
     conn.commit()
     return redirect("/")
+
 
 
 if __name__ == "__main__":

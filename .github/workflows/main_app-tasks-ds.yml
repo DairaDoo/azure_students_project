@@ -31,7 +31,13 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-        
+
+      - name: Install black
+        run: pip install black
+
+      - name: Check formatting of app.py with black
+        run: black --check app.py
+
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
@@ -78,4 +84,3 @@ jobs:
         with:
           app-name: 'app-tasks-ds'
           slot-name: 'Production'
-          
