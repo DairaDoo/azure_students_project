@@ -45,7 +45,7 @@ Describe brevemente tu aplicación:
 4. Luego, configuras las variables de entorno en un `.env`
 5. En la terminal de VSC se ejecuta en la terminal el comando de `python app.py`.
 
-![Terminal_app.py](./imgs/python_app.py.png)
+![Terminal_app.py](./imgs/python_appy.py.png)
 
 6. Al ejecutarse ese comando podras ver las configuraciones del "Host" y entras al puerto `http://127.0.0.1:5000`
 
@@ -172,14 +172,61 @@ Al completar el flujo, cualquier cambio confirmado en la rama `main` será autom
 ---
 
 ## 💻 Enlace a la Aplicación Desplegada
-> [https://tu-app.azurewebsites.net](https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net/)
+> [https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net](https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net/)
 
 ---
 
-## 💸 Estimación del Costo (Azure Pricing Calculator)
-Describe el costo estimado mensual de tu arquitectura si se ejecutara sin los beneficios gratuitos.  
-Incluye una captura de pantalla o PDF del cálculo.  
-> [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
+## 💰 Estimación de Costo con Azure Pricing Calculator
+Este proyecto utiliza los siguientes servicios de Azure:
+- Azure SQL Database – Nombre del recurso: proyecto_estudiante
+- Azure SQL Server – Nombre del recurso: proyecto-final-cloud
+
+---
+
+## 🧾 Plan Gratuito: Azure for Students
+Azure for Students proporciona un crédito gratuito de $100 USD por 12 meses y acceso a múltiples servicios gratuitos, ideal para proyectos académicos.
+
+| Servicio               | Detalles del Plan Gratuito                                                         |
+| ---------------------- | ---------------------------------------------------------------------------------- |
+| **Azure SQL Database** | Hasta 250 GB de almacenamiento con rendimiento básico (5 DTUs) por 12 meses        |
+| **Azure SQL Server**   | Sin costo adicional cuando se usa con bases de datos incluidas en el plan gratuito |
+
+
+✅ Mientras se mantenga dentro de estos límites, el uso es completamente gratuito.
+
+---
+
+## 📉 ¿Qué pasa si no se utiliza el plan gratuito?
+Si no se cuenta con los beneficios del plan Azure for Students, los servicios se cobrarán bajo la estructura estándar de precios de Azure.
+
+## 💡 Fórmula para estimar el costo mensual:
+Costo mensual ≈ (Precio por nivel de rendimiento × Horas/mes) + (Precio por GB de almacenamiento × Almacenamiento)
+
+---
+
+## 📊 Escenario hipotético sin plan gratuito
+Supongamos que tu aplicación es utilizada activamente por 500 usuarios mensuales, lo que requiere mayor rendimiento para manejar múltiples conexiones y transacciones concurrentes.
+
+Configuración estimada para 500 usuarios:
+- Azure SQL Database(DTU-based model)
+- Plan: Standard – S1 (20 DTUs)
+- Almacenamiento: 10 GB
+
+- Tiempo en línea: 730 horas/mes (24/7)
+
+- Precio aproximado: $30.72 USD/mes
+
+- Azure SQL Server
+  - Costo adicional: $0 USD (cuando se usa junto a SQL Database)
+
+| Recurso                | Configuración                      | Precio estimado mensual |
+| ---------------------- | ---------------------------------- | ----------------------- |
+| **Azure SQL Database** | S1 – 20 DTUs, 10 GB almacenamiento | \~\$30.45 USD           |
+| **Azure SQL Server**   | Usado junto a SQL Database         | \$0 USD                 |
+| **Total estimado**     |                                    | **\~\$30.45 USD/mes**   |
+
+
+> [Azure Pricing Calculator](ExportedEstimate.pdf)
 
 ---
 
@@ -197,15 +244,17 @@ Incluye una captura de pantalla o PDF del cálculo.
 ---
 
 ## 📘 Lecciones Aprendidas
-- ¿Qué retos enfrentaron y cómo los resolvieron?
-- ¿Qué aprendieron sobre trabajar con servicios cloud?
-- ¿Qué mejorarían en una próxima versión del proyecto?
+- ¿Qué retos enfrentaron y cómo los resolvieron? Tuvimos dos principales retos. El primero fue conectar con la base de datos     desde Azure App Service, lo cual resolvimos al identificar que el problema estaba en el driver: necesitábamos la versión 18 en lugar de la 17. El segundo fue ejecutar el proyecto localmente, donde las variables del archivo .env no se cargaban correctamente. Esto se solucionó integrando la librería dotenv, que permitió acceder a las variables de entorno y establecer la conexión exitosamente.
+
+- ¿Qué aprendieron sobre trabajar con servicios cloud? Aprendimos que los servicios en la nube ofrecen una alta escalabilidad y flexibilidad, lo que facilita mucho el proceso de despliegue de aplicaciones. Además, notamos que al trabajar en equipo de forma distribuida, la nube permite una integración más eficiente entre las distintas partes del proyecto, brindando una mayor confiabilidad, seguridad y simplicidad en la implementación grupal de un proyecto.
+
+- ¿Qué mejorarían en una próxima versión del proyecto? En una próxima versión del proyecto, nos gustaría implementar una arquitectura más escalable y robusta, incorporando el uso de roles, medidas de seguridad más avanzadas y la integración entre distintos servicios en la nube. Esto nos permitiría comprender mejor cómo se relacionan los componentes dentro de Azure y cómo diseñar soluciones más completas y seguras en un entorno real.
 
 ---
 
 ## 📚 Repositorio del Código
-Incluye el link al repositorio de GitHub (debe estar público o accesible para el profesor):
-> [https://github.com/usuario/proyecto](https://github.com/usuario/proyecto)
+Enlace:
+> [https://github.com/DairaDoo/azure_students_project](https://github.com/DairaDoo/azure_students_project)
 
 ---
 
@@ -220,13 +269,13 @@ Incluye el link al repositorio de GitHub (debe estar público o accesible para e
 ---
 
 ## ✅ Checklist Final
-- [ ] App funcional y desplegada
-- [ ] Servicios gratuitos utilizados correctamente
-- [ ] Diagrama de arquitectura incluido
-- [ ] Documentación clara y completa
-- [ ] Costos estimados incluidos
-- [ ] Repositorio disponible en GitHub
-- [ ] Lecciones aprendidas y reflexión final escritas
+- [X] App funcional y desplegada
+- [X] Servicios gratuitos utilizados correctamente
+- [X] Diagrama de arquitectura incluido
+- [X] Documentación clara y completa
+- [X] Costos estimados incluidos
+- [X] Repositorio disponible en GitHub
+- [X] Lecciones aprendidas y reflexión final escritas
 
 ---
 
