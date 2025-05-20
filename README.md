@@ -107,15 +107,72 @@ Para la **persistencia de datos** de la aplicación, se configuró una base de d
 Una vez que la base de datos estuvo operativa, se obtuvo la **cadena de conexión (connection string)** 🔑. Esta cadena se utilizó para configurar las **variables de entorno** (`SQL_SERVER`, `SQL_DATABASE`, `SQL_USERNAME`, `SQL_PASSWORD`) dentro de la configuración del **App Service**. Al establecer estas variables con los detalles de conexión correctos, la aplicación **Flask** desplegada en el **Web App** pudo establecer comunicación y realizar operaciones en la base de datos `proyecto_estudiante`.
 
 
-### 3. Automatización (opcional)
-Si usaste GitHub Actions, Terraform, Bicep, ARM Templates, etc., explica:
-- Qué automatiza
-- Dónde está el archivo (.yml, .json, etc.)
+## ⚙️ 3. Automatización: Despliegue con GitHub Actions
+
+Este proyecto utiliza **GitHub Actions** para automatizar la construcción, validación y despliegue de una aplicación Python hacia **Azure Web App**.
+
+### 📄 Archivo de configuración
+
+El archivo responsable de esta automatización es:
+
+.github/workflows/main_app-task-ds.yml
+
+
+---
+
+### 🔁 ¿Qué automatiza?
+
+El flujo de trabajo definido en `main_app-task-ds.yml` consta de **dos fases principales**: `build` y `deploy`.
+
+#### 🧱 Fase 1: `build`
+
+Esta fase se ejecuta automáticamente cuando se hace `push` a la rama `main` o manualmente desde la pestaña **Actions** de GitHub. Sus pasos son los siguientes:
+
+1. **Clona el repositorio.**
+2. **Configura Python 3.10** en el entorno de ejecución.
+3. **Crea y activa un entorno virtual.**
+4. **Instala dependencias** desde `requirements.txt`.
+5. **Instala y ejecuta Black** para verificar el formato de `app.py`.
+6. **Comprime todo el proyecto** en un archivo `release.zip` (ignorando la carpeta `venv/`).
+7. **Sube el artefacto comprimido** para ser utilizado posteriormente en la fase de despliegue.
+
+#### ☁️ Fase 2: `deploy`
+
+Esta fase se ejecuta solo si la fase `build` se completa correctamente. Aquí se realiza lo siguiente:
+
+1. **Descarga el artefacto** generado por `build`.
+2. **Descomprime** el archivo `release.zip`.
+3. **Inicia sesión en Azure** usando credenciales seguras (almacenadas como `Secrets` en GitHub).
+4. **Despliega automáticamente la aplicación** al recurso de Azure Web App llamado `app-tasks-ds`, en el slot `Production`.
+
+---
+
+### 🔐 Requisitos para la automatización
+
+Para que esta automatización funcione correctamente, se deben configurar los siguientes **Secrets** en el repositorio de GitHub:
+
+- `AZUREAPPSERVICE_CLIENTID_XXXX`
+- `AZUREAPPSERVICE_TENANTID_XXXX`
+- `AZUREAPPSERVICE_SUBSCRIPTIONID_XXXX`
+
+Estos permiten la autenticación segura con Azure sin almacenar credenciales sensibles directamente en el código.
+
+---
+
+### ✅ Resultado
+
+Al completar el flujo, cualquier cambio confirmado en la rama `main` será automáticamente:
+
+- Validado en cuanto a formato.
+- Empaquetado como artefacto listo para despliegue.
+- Desplegado directamente en el entorno de producción en Azure, sin intervención manual.
+
+
 
 ---
 
 ## 💻 Enlace a la Aplicación Desplegada
-> [https://tu-app.azurewebsites.net](https://tu-app.azurewebsites.net)
+> [https://tu-app.azurewebsites.net](https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net/)
 
 ---
 
