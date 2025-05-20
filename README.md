@@ -45,13 +45,13 @@ Describe brevemente tu aplicación:
 4. Luego, configuras las variables de entorno en un `.env`
 5. En la terminal de VSC se ejecuta en la terminal el comando de `python app.py`.
 
-![Terminal_app.py] (./imgs/python_appy.py.png)
+![Terminal_app.py](./imgs/python_appy.py.png)
 
 6. Al ejecutarse ese comando podras ver las configuraciones del "Host" y entras al puerto `http://127.0.0.1:5000`
 
 7. Finalmente, se muestra la interfaz del Task Manager App y se nota la ruta en el browser, indicando la utilización del puerto correcto.
 
-![Task_Maneger_Interfaz] (./imgs/Interfaz_Task_Manager.png)
+![Task_Maneger_Interfaz](./imgs/Interfaz_Task_Manager.png)
 
 
 ### 2. Configuración en Azure
@@ -73,10 +73,57 @@ Si usaste GitHub Actions, Terraform, Bicep, ARM Templates, etc., explica:
 
 ---
 
-## 💸 Estimación del Costo (Azure Pricing Calculator)
-Describe el costo estimado mensual de tu arquitectura si se ejecutara sin los beneficios gratuitos.  
-Incluye una captura de pantalla o PDF del cálculo.  
-> [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
+## 💰 Estimación de Costo con Azure Pricing Calculator
+Este proyecto utiliza los siguientes servicios de Azure:
+- Azure SQL Database – Nombre del recurso: proyecto_estudiante
+- Azure SQL Server – Nombre del recurso: proyecto-final-cloud
+
+---
+
+## 🧾 Plan Gratuito: Azure for Students
+Azure for Students proporciona un crédito gratuito de $100 USD por 12 meses y acceso a múltiples servicios gratuitos, ideal para proyectos académicos.
+
+| Servicio               | Detalles del Plan Gratuito                                                         |
+| ---------------------- | ---------------------------------------------------------------------------------- |
+| **Azure SQL Database** | Hasta 250 GB de almacenamiento con rendimiento básico (5 DTUs) por 12 meses        |
+| **Azure SQL Server**   | Sin costo adicional cuando se usa con bases de datos incluidas en el plan gratuito |
+
+
+✅ Mientras se mantenga dentro de estos límites, el uso es completamente gratuito.
+
+---
+
+## 📉 ¿Qué pasa si no se utiliza el plan gratuito?
+Si no se cuenta con los beneficios del plan Azure for Students, los servicios se cobrarán bajo la estructura estándar de precios de Azure.
+
+## 💡 Fórmula para estimar el costo mensual:
+Costo mensual ≈ (Precio por nivel de rendimiento × Horas/mes) + (Precio por GB de almacenamiento × Almacenamiento)
+
+---
+
+## 📊 Escenario hipotético sin plan gratuito
+Supongamos que tu aplicación es utilizada activamente por 500 usuarios mensuales, lo que requiere mayor rendimiento para manejar múltiples conexiones y transacciones concurrentes.
+
+Configuración estimada para 500 usuarios:
+- Azure SQL Database(DTU-based model)
+- Plan: Standard – S1 (20 DTUs)
+- Almacenamiento: 10 GB
+
+- Tiempo en línea: 730 horas/mes (24/7)
+
+- Precio aproximado: $30.72 USD/mes
+
+- Azure SQL Server
+  - Costo adicional: $0 USD (cuando se usa junto a SQL Database)
+
+| Recurso                | Configuración                      | Precio estimado mensual |
+| ---------------------- | ---------------------------------- | ----------------------- |
+| **Azure SQL Database** | S1 – 20 DTUs, 10 GB almacenamiento | \~\$30.45 USD           |
+| **Azure SQL Server**   | Usado junto a SQL Database         | \$0 USD                 |
+| **Total estimado**     |                                    | **\~\$30.45 USD/mes**   |
+
+
+> [Azure Pricing Calculator](ExportedEstimate.pdf)
 
 ---
 
