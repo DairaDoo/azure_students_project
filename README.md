@@ -45,13 +45,13 @@ Describe brevemente tu aplicación:
 4. Luego, configuras las variables de entorno en un `.env`
 5. En la terminal de VSC se ejecuta en la terminal el comando de `python app.py`.
 
-![Diagrama] (./imgs/python_appy.py.png)
+![Terminal_app.py](./imgs/python_appy.py.png)
 
 6. Al ejecutarse ese comando podras ver las configuraciones del "Host" y entras al puerto `http://127.0.0.1:5000`
 
 7. Finalmente, se muestra la interfaz del Task Manager App y se nota la ruta en el browser, indicando la utilización del puerto correcto.
 
-![Task_Maneger_Interfaz] (./imgs/Interfaz_Task_Manager.png)
+![Task_Maneger_Interfaz](./imgs/Interfaz_Task_Manager.png)
 
 
 información Configuración en Azure Readme: 
