@@ -232,15 +232,20 @@ Configuración estimada para 500 usuarios:
 
 ## 📁 Capturas del Portal de Azure
 
-*** ![App Desplegado](./imgs/App_desplegada.jpeg)
+*** 
+![App Desplegado](./imgs/App_desplegada.jpeg)
 
-*** ![Configuraciones (Create Web App)](./imgs/App_desplegada.jpeg)
+*** 
+![Configuraciones (Create Web App)](./imgs/App_desplegada.jpeg)
 
-*** ![Centro de Despliegue](./imgs/Deployment_center.jpeg)
+*** 
+![Centro de Despliegue](./imgs/Deployment_center.jpeg)
 
-*** ![Overview](./imgs/Web_app.jpeg)
+*** #Overview
+![Overview](./imgs/Web_app.jpeg)
 
-*** ![Variables de Entorno](./imgs/Variables_entorno.jpeg)
+*** #Variables de Entorno
+![Variables de Entorno](./imgs/Variables_entorno.jpeg)
 ---
 
 ## 📘 Lecciones Aprendidas
