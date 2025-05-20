@@ -54,12 +54,58 @@ Describe brevemente tu aplicación:
 ![Task_Maneger_Interfaz] (./imgs/Interfaz_Task_Manager.png)
 
 
-### 2. Configuración en Azure
-- Pasos realizados en Azure Portal
-- Configuración del App Service
-- Variables de entorno definidas (nombres, no valores)
-- Configuración del SQL Server
-- Contenedores, Blob, tablas, etc. (si aplica)
+información Configuración en Azure Readme: 
+
+
+
+### 🚀 2. Configuración en Azure ☁️
+
+Este documento detalla los pasos realizados en el Azure Portal para la configuración de la aplicación web 🌐 y su conexión crucial con la base de datos Azure SQL 💾.
+
+### 🛠️ Pasos Realizados en Azure Portal 🛠️
+
+#### ⚙️ Configuración del App Service ⚙️
+
+Se creó un **Web App** con los siguientes detalles clave:
+
+* **🏷️ Nombre del Web App:** `app-tasks-ds`
+* **🌍 Región:** East US
+* **📂 Grupo de recursos:** `Proyecto_Final`
+* **🔗 Dominio predeterminado:** `app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net`
+* **⚙️ Plan de App Service:** `ASP-ServidorEstudiante1group-ad3c` (F1: 1)
+*  **🔗 Repositorio conectado:** [https://github.com/DairaDoo/azure_students_project](https://github.com/DairaDoo/azure_students_project)
+
+Este **Web App** servirá como la plataforma de ejecución para nuestra aplicación **Flask**.
+
+#### 🔑 Variables de entorno definidas 🔑
+
+Se definieron las siguientes **variables de entorno** dentro de la configuración del **App Service** para la conexión a la base de datos:
+
+* `SQL_SERVER`
+* `SQL_DATABASE`
+* `SQL_USERNAME`
+* `SQL_PASSWORD`
+
+Estas variables serán utilizadas por la aplicación **Flask** para establecer una conexión segura con la base de datos **Azure SQL**.
+
+#### 💾 Configuración del SQL Server 💾
+
+Para la **persistencia de datos** de la aplicación, se configuró una base de datos **Azure SQL** siguiendo estos pasos esenciales:
+
+1.  ✨ Se creó una **Azure SQL Database** con el nombre: `proyecto_estudiante`.
+2.  📂 Se seleccionó o creó un **Grupo de recursos** denominado: `DefaultResourceGroup-EUS`.
+3.  🌐 Se provisionó un nuevo **servidor** llamado: `proyecto-final-cloud`, ubicado en la región: `West US 2`.
+4.  🛡️ Se configuró la **autenticación** del servidor mediante **Microsoft Entra ID** y una cuenta de administrador de SQL, con los siguientes detalles:
+    * **👤 Nombre de administrador:** `lcordero123`
+    * **🏢 Microsoft Entra ID:** `lcordero7366@arecibointer.edu`
+    * **🔒 Contraseña:** (Contraseña personalizada establecida durante la creación).
+5.  🚦 Se agregaron las **direcciones IPv4** necesarias a la configuración del **firewall** del servidor para permitir el acceso.
+6.  ✅ Finalmente, se creó la base de datos `proyecto_estudiante` en el servidor `proyecto-final-cloud`, completando la configuración de la base de datos para nuestro proyecto.
+
+#### 🔗 Conexión del App Service a la Base de Datos 🔗
+
+Una vez que la base de datos estuvo operativa, se obtuvo la **cadena de conexión (connection string)** 🔑. Esta cadena se utilizó para configurar las **variables de entorno** (`SQL_SERVER`, `SQL_DATABASE`, `SQL_USERNAME`, `SQL_PASSWORD`) dentro de la configuración del **App Service**. Al establecer estas variables con los detalles de conexión correctos, la aplicación **Flask** desplegada en el **Web App** pudo establecer comunicación y realizar operaciones en la base de datos `proyecto_estudiante`.
+
 
 ### 3. Automatización (opcional)
 Si usaste GitHub Actions, Terraform, Bicep, ARM Templates, etc., explica:
