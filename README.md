@@ -172,7 +172,7 @@ Al completar el flujo, cualquier cambio confirmado en la rama `main` será autom
 ---
 
 ## 💻 Enlace a la Aplicación Desplegada
-> [https://tu-app.azurewebsites.net](https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net/)
+> [https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net](https://app-tasks-ds-aqgsaddfhneyhce6.eastus-01.azurewebsites.net/)
 
 ---
 
