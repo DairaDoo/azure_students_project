@@ -184,11 +184,16 @@ Incluye una captura de pantalla o PDF del cálculo.
 ---
 
 ## 📁 Capturas del Portal de Azure
-Agrega capturas mostrando:
-- Los recursos creados (App Service, SQL Database, Storage, etc.)
-- Configuraciones clave
-- Diagnóstico o panel de monitoreo (opcional)
 
+*** ![App Desplegado](./imgs/App_desplegada.jpeg)
+
+*** ![Configuraciones (Create Web App)](./imgs/App_desplegada.jpeg)
+
+*** ![Centro de Despliegue](./imgs/Deployment_center.jpeg)
+
+*** ![Overview](./imgs/Web_app.jpeg)
+
+*** ![Variables de Entorno](./imgs/Variables_entorno.jpeg)
 ---
 
 ## 📘 Lecciones Aprendidas
