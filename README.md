@@ -54,9 +54,6 @@ Describe brevemente tu aplicación:
 ![Task_Maneger_Interfaz](./imgs/Interfaz_Task_Manager.png)
 
 
-información Configuración en Azure Readme: 
-
-
 
 ### 🚀 2. Configuración en Azure ☁️
 
@@ -107,7 +104,7 @@ Para la **persistencia de datos** de la aplicación, se configuró una base de d
 Una vez que la base de datos estuvo operativa, se obtuvo la **cadena de conexión (connection string)** 🔑. Esta cadena se utilizó para configurar las **variables de entorno** (`SQL_SERVER`, `SQL_DATABASE`, `SQL_USERNAME`, `SQL_PASSWORD`) dentro de la configuración del **App Service**. Al establecer estas variables con los detalles de conexión correctos, la aplicación **Flask** desplegada en el **Web App** pudo establecer comunicación y realizar operaciones en la base de datos `proyecto_estudiante`.
 
 
-## ⚙️ 3. Automatización: Despliegue con GitHub Actions
+### ⚙️ 3. Automatización: Despliegue con GitHub Actions
 
 Este proyecto utiliza **GitHub Actions** para automatizar la construcción, validación y despliegue de una aplicación Python hacia **Azure Web App**.
 
