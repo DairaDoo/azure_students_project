@@ -45,11 +45,7 @@ Describe brevemente tu aplicación:
 4. Luego, configuras las variables de entorno en un `.env`
 5. En la terminal de VSC se ejecuta en la terminal el comando de `python app.py`.
 
-<<<<<<< HEAD
 ![Terminal_app.py](./imgs/python_appy.py.png)
-=======
-![Terminal_app.py](./imgs/python_app.py.png)
->>>>>>> d2f137fde17055ad1bbf00e2e14ab61a67a0b4cd
 
 6. Al ejecutarse ese comando podras ver las configuraciones del "Host" y entras al puerto `http://127.0.0.1:5000`
 
@@ -268,13 +264,13 @@ Enlace:
 ---
 
 ## ✅ Checklist Final
-- [ ] App funcional y desplegada
-- [ ] Servicios gratuitos utilizados correctamente
-- [ ] Diagrama de arquitectura incluido
-- [ ] Documentación clara y completa
-- [ ] Costos estimados incluidos
-- [ ] Repositorio disponible en GitHub
-- [ ] Lecciones aprendidas y reflexión final escritas
+- [X] App funcional y desplegada
+- [X] Servicios gratuitos utilizados correctamente
+- [X] Diagrama de arquitectura incluido
+- [X] Documentación clara y completa
+- [X] Costos estimados incluidos
+- [X] Repositorio disponible en GitHub
+- [X] Lecciones aprendidas y reflexión final escritas
 
 ---
 
