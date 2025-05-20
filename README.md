@@ -135,15 +135,17 @@ Agrega capturas mostrando:
 ---
 
 ## 📘 Lecciones Aprendidas
-- ¿Qué retos enfrentaron y cómo los resolvieron?
-- ¿Qué aprendieron sobre trabajar con servicios cloud?
-- ¿Qué mejorarían en una próxima versión del proyecto?
+- ¿Qué retos enfrentaron y cómo los resolvieron? Tuvimos dos principales retos. El primero fue conectar con la base de datos     desde Azure App Service, lo cual resolvimos al identificar que el problema estaba en el driver: necesitábamos la versión 18 en lugar de la 17. El segundo fue ejecutar el proyecto localmente, donde las variables del archivo .env no se cargaban correctamente. Esto se solucionó integrando la librería dotenv, que permitió acceder a las variables de entorno y establecer la conexión exitosamente.
+
+- ¿Qué aprendieron sobre trabajar con servicios cloud? Aprendimos que los servicios en la nube ofrecen una alta escalabilidad y flexibilidad, lo que facilita mucho el proceso de despliegue de aplicaciones. Además, notamos que al trabajar en equipo de forma distribuida, la nube permite una integración más eficiente entre las distintas partes del proyecto, brindando una mayor confiabilidad, seguridad y simplicidad en la implementación grupal de un proyecto.
+
+- ¿Qué mejorarían en una próxima versión del proyecto? En una próxima versión del proyecto, nos gustaría implementar una arquitectura más escalable y robusta, incorporando el uso de roles, medidas de seguridad más avanzadas y la integración entre distintos servicios en la nube. Esto nos permitiría comprender mejor cómo se relacionan los componentes dentro de Azure y cómo diseñar soluciones más completas y seguras en un entorno real.
 
 ---
 
 ## 📚 Repositorio del Código
-Incluye el link al repositorio de GitHub (debe estar público o accesible para el profesor):
-> [https://github.com/usuario/proyecto](https://github.com/usuario/proyecto)
+Enlace:
+> [https://github.com/DairaDoo/azure_students_project](https://github.com/DairaDoo/azure_students_project)
 
 ---
 
