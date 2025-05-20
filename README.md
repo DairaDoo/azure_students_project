@@ -236,7 +236,7 @@ Configuración estimada para 500 usuarios:
 ![App Desplegado](./imgs/App_desplegada.jpeg)
 
 ## Configuraciones (Create Web App)
-![Configuraciones (Create Web App)](./imgs/App_desplegada.jpeg)
+![Configuraciones (Create Web App)](./imgs/Create_app.jpeg)
 
 ## Centro de Despliegue
 ![Centro de Despliegue](./imgs/Deployment_center.jpeg)
